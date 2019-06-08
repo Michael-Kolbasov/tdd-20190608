@@ -4,14 +4,11 @@ import com.epam.tdd.enums.SmurfSkill;
 import com.epam.tdd.exceptions.DontMessWithSmurfException;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
+@Table(name = "smurfs")
 public class Smurf {
 
     @Id
@@ -22,6 +19,7 @@ public class Smurf {
     private String name;
 
     @Column(name = "qualification")
+    @Enumerated(EnumType.STRING)
     private SmurfSkill skill;
 
     @Column

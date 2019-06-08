@@ -3,7 +3,9 @@ package com.epam.tdd.dao;
 import com.epam.tdd.model.Smurf;
 import com.epam.tdd.util.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -44,6 +46,9 @@ public class SmurfDao {
 
     @SuppressWarnings("unchecked")
     public List<Smurf> findAll() {
-        return (List<Smurf>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Smurfs").list();
+        SessionFactory sessionFactory = HibernateSessionFactoryUtil.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        Query from_smurfs = session.createQuery("from Smurf");
+        return (List<Smurf>) from_smurfs.list();
     }
 }
