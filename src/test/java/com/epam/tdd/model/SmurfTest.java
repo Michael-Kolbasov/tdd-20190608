@@ -1,6 +1,5 @@
-package com.epam.tdd.services.com.epam.tdd.model;
+package com.epam.tdd.model;
 
-import com.epam.tdd.model.Smurf;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;

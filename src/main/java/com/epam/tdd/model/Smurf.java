@@ -1,5 +1,6 @@
 package com.epam.tdd.model;
 
+import com.epam.tdd.enums.SmurfBrigade;
 import com.epam.tdd.enums.SmurfSkill;
 import com.epam.tdd.exceptions.DontMessWithSmurfException;
 import lombok.Data;
@@ -24,6 +25,8 @@ public class Smurf {
 
     @Column
     private int tiredness;
+
+    private SmurfBrigade smurfBrigade;
 
     public Smurf() {
         int random = (int) (Math.random() * 3);
@@ -51,5 +54,18 @@ public class Smurf {
     public void collectBerry(Berry berry) {
         int collectCost = berry.getColor().getCollectCost();
         this.tiredness -= collectCost;
+    }
+
+    public static void defineSmurfInBrigade(Smurf smurf) {
+        int tiredness = smurf.getTiredness();
+        if (tiredness >= SmurfBrigade.LOW.getLowBorder() && tiredness <= SmurfBrigade.LOW.getHighBOrder()) {
+            smurf.setSmurfBrigade(SmurfBrigade.LOW);
+        } else if (tiredness >= SmurfBrigade.MEDIUM.getLowBorder() && tiredness <= SmurfBrigade.MEDIUM.getHighBOrder()) {
+            smurf.setSmurfBrigade(SmurfBrigade.MEDIUM);
+        } else if (tiredness >= SmurfBrigade.HIGH.getLowBorder() && tiredness <= SmurfBrigade.HIGH.getHighBOrder()) {
+            smurf.setSmurfBrigade(SmurfBrigade.HIGH);
+        } else {
+            throw new DontMessWithSmurfException("Don't mess with smurfs!");
+        }
     }
 }

@@ -16,4 +16,6 @@ dependencies {
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.6'
     implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.2.Final'
     implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '2.0.2-beta'
+    testCompile group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
 }
