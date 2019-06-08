@@ -11,8 +11,6 @@ public class SmurfTest {
     public void testInit() {
         for (int i = 0; i < 50; i++) {
             Smurf smurf = new Smurf();
-            System.out.println(smurf.getAnxiety());
-            System.out.println(smurf.getSkill());
             assertTrue(smurf.getAnxiety() >= 0);
             assertTrue(smurf.getAnxiety() <= 100);
         }
