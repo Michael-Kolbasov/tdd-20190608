@@ -11,13 +11,13 @@ public class Smurf {
 
     private SmurfSkill skill;
 
-    private int anxiety;
+    private int tiredness;
 
     public Smurf() {
         Random random = new Random(37);
         int num = random.nextInt(3);
         this.skill = SmurfSkill.values()[num];
-        this.anxiety = (int) (Math.random() * 100);
+        this.tiredness = (int) (Math.random() * 100);
     }
 
     public Smurf(SmurfSkill skill) {
@@ -25,7 +25,7 @@ public class Smurf {
             throw new DontMessWithSmurfException("Smurf must have a skill");
         }
         this.skill = skill;
-        this.anxiety = (int) (Math.random() * 100);
+        this.tiredness = (int) (Math.random() * 100);
     }
 
     public void collectBerry() {
