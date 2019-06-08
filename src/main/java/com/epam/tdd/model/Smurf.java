@@ -25,7 +25,8 @@ public class Smurf {
         this.tiredness = (int) (Math.random() * 100);
     }
 
-    public void collectBerry() {
-
+    public void collectBerry(Berry berry) {
+        int collectCost = berry.getColor().getCollectCost();
+        this.tiredness -= collectCost;
     }
 }
