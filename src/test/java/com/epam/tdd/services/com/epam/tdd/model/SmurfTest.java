@@ -11,6 +11,8 @@ public class SmurfTest {
     public void testInit() {
         for (int i = 0; i < 50; i++) {
             Smurf smurf = new Smurf();
+            System.out.println(smurf.getSkill());
+            System.out.println(smurf.getTiredness());
             assertTrue(smurf.getTiredness() >= 0);
             assertTrue(smurf.getTiredness() <= 100);
         }
