@@ -12,7 +12,7 @@ public class Smurf {
     private int tiredness;
 
     public Smurf() {
-        int random = (int)(Math.random() * 3);
+        int random = (int) (Math.random() * 3);
         this.skill = SmurfSkill.values()[random];
         this.tiredness = (int) (Math.random() * 100);
     }
